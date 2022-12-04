@@ -29,4 +29,8 @@ public class MyRestController {
         bookRepository.deleteById(id);
     }
 
+    @PutMapping(value="/update")
+    public void updateBook(@RequestBody Book newBook){
+        bookRepository.save(newBook);
+    }
 }
