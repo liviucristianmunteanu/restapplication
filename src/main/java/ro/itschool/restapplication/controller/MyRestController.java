@@ -1,9 +1,7 @@
 package ro.itschool.restapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ro.itschool.restapplication.entity.Book;
 import ro.itschool.restapplication.repository.BookRepository;
 
@@ -20,4 +18,12 @@ public class MyRestController {
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
+
+    @PostMapping
+    public void saveBook(@RequestBody Book book) {
+        bookRepository.save(book);
+    }
+
+
+
 }
