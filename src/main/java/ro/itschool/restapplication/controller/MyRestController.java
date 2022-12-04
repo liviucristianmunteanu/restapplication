@@ -31,6 +31,9 @@ public class MyRestController {
 
     @PutMapping(value="/update")
     public void updateBook(@RequestBody Book newBook){
+        if (newBook.getId() == null){
+            throw new RuntimeException("Book not found!");
+        }
         bookRepository.save(newBook);
     }
 }
