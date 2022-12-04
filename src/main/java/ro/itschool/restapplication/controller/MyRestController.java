@@ -24,6 +24,9 @@ public class MyRestController {
         bookRepository.save(book);
     }
 
-
+    @DeleteMapping(value = "{id}")
+    public void deleteCar(@PathVariable long id){
+        bookRepository.deleteById(id);
+    }
 
 }
